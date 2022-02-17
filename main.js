@@ -1,25 +1,37 @@
 const form = document.querySelector('form')
-const input = document.querySelector('input')
+const addInput = document.querySelector('.add')
 const tasksNumber = document.querySelector('h1 span')
 const ul = document.querySelector('ul')
-let tasksCounter = 0
+const tasksList = []
+const searchInput = document.querySelector('.search')
 
 const addTask = (e) => {
     e.preventDefault()
-    const taskTitle = input.value
+    const taskTitle = addInput.value
     const task = document.createElement('li')
     task.innerHTML = taskTitle + ' <button class="remove">Usuń</button>'
-    ul.appendChild(task)
-    input.value = ''
+    tasksList.push(task)
+    ul.textContent = ''
+    tasksList.forEach((li, index) => {
+        li.id = index
+        ul.appendChild(li)
+    })
+    addInput.value = ''
     task.querySelector('.remove').addEventListener('click', removeTask)
-    tasksCounter++
-    tasksNumber.textContent = tasksCounter
+    tasksNumber.textContent = tasksList.length
 }
 
 const removeTask = (e) => {
     e.target.parentNode.remove()
-    tasksCounter--
-    tasksNumber.textContent = tasksCounter
+    index = e.target.parentNode.id
+    tasksList.splice(index, 1)
+    tasksNumber.textContent = tasksList.length
+}
+
+const searchTask = (e) => {
+    // console.log(e.target.value)
+
 }
 
 form.addEventListener('submit', addTask)
+searchInput.addEventListener('input', searchTask)
