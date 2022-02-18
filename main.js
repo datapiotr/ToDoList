@@ -29,8 +29,14 @@ const removeTask = (e) => {
 }
 
 const searchTask = (e) => {
-    // console.log(e.target.value)
-
+    ul.textContent = ''
+    const filtered = tasksList.filter(li => {
+        return li.textContent.toLowerCase().includes(e.target.value.toLowerCase())
+    })
+    filtered.forEach(li => {
+        ul.appendChild(li)
+    })
+    console.log(filtered)
 }
 
 form.addEventListener('submit', addTask)
