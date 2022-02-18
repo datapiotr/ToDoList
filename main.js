@@ -36,7 +36,6 @@ const searchTask = (e) => {
     filtered.forEach(li => {
         ul.appendChild(li)
     })
-    console.log(filtered)
 }
 
 form.addEventListener('submit', addTask)
