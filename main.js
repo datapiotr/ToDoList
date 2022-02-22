@@ -1,6 +1,6 @@
 const form = document.querySelector('form')
-const addInput = document.querySelector('.add')
-const tasksNumber = document.querySelector('h1 span')
+const addInput = document.querySelector('.add input')
+const tasksNumber = document.querySelector('h2 span')
 const ul = document.querySelector('ul')
 const tasksList = []
 const searchInput = document.querySelector('.search')
@@ -9,7 +9,7 @@ const addTask = (e) => {
     e.preventDefault()
     const taskTitle = addInput.value
     const task = document.createElement('li')
-    task.innerHTML = taskTitle + ' <button class="remove">Usuń</button>'
+    task.innerHTML = taskTitle + ' <i class="fa-solid fa-trash remove"></i> '
     tasksList.push(task)
     ul.textContent = ''
     tasksList.forEach((li, index) => {

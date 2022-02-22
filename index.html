@@ -5,17 +5,30 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="styles.css" rel="stylesheet">
     <title>To do list</title>
 </head>
 
 <body>
     <form>
-        <input class="add">
-        <button>Dodaj</button>
+        <h1>To Do List</h1>
+        <div class="add">
+            <input placeholder="enter task name">
+            <button>+</button>
+        </div>
+        <input class="search" placeholder="search for specific task">
+        <h2>Number of tasks: <span>0</span></h2>
     </form>
-    <input class="search">
-    <h1>Liczba zadań: <span>0</span></h1>
-    <ul></ul>
+    <div class="to-do-container">
+        <ul></ul>
+    </div>
+    <script src="https://kit.fontawesome.com/c8060916e9.js" crossorigin="anonymous"></script>
     <script src="main.js"></script>
 </body>
 

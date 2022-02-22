@@ -1,0 +1,59 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0
+}
+
+body {
+    background: linear-gradient(to right, #606c88, #3f4c6b);
+    color: white;
+    font-family: 'Lato', sans-serif;
+}
+
+form {
+    margin-top: 5vh;
+    min-height: 25vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+form input, form button {
+    padding: 0.5rem;
+    font-size: 1.2rem;
+    border: none;
+    background: white;
+}
+
+.add button {
+    color: black;
+    background: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.add button:hover {
+    background: orange;
+    color: white;
+}
+
+.to-do-container {
+    margin-top: 5vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.to-do-container li {
+    margin-bottom: 10px;
+}
+
+.to-do-container li .remove {
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.to-do-container li .remove:hover {
+    color: orange
+}
