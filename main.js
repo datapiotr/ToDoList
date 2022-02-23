@@ -5,27 +5,31 @@ const ul = document.querySelector('ul')
 const tasksList = []
 const searchInput = document.querySelector('.search')
 
+const renderList = () => {
+    ul.textContent = ''
+    tasksList.forEach((li, index) => {
+        li.id = index
+        ul.appendChild(li)
+    })
+}
+
 const addTask = (e) => {
     e.preventDefault()
     const taskTitle = addInput.value
     const task = document.createElement('li')
     task.innerHTML = taskTitle + '  <i class="fa-solid fa-trash remove"></i>'
     tasksList.push(task)
-    ul.textContent = ''
-    tasksList.forEach((li, index) => {
-        li.id = index
-        ul.appendChild(li)
-    })
+    renderList()
     addInput.value = ''
     task.querySelector('.remove').addEventListener('click', removeTask)
     tasksNumber.textContent = tasksList.length
 }
 
 const removeTask = (e) => {
-    e.target.parentNode.remove()
     index = e.target.parentNode.id
     tasksList.splice(index, 1)
     tasksNumber.textContent = tasksList.length
+    renderList()
 }
 
 const searchTask = (e) => {
