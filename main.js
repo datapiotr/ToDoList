@@ -16,6 +16,7 @@ const renderList = () => {
 const addTask = (e) => {
     e.preventDefault()
     const taskTitle = addInput.value
+    if (taskTitle === '') return
     const task = document.createElement('li')
     task.innerHTML = taskTitle + '  <i class="fa-solid fa-trash remove"></i>'
     tasksList.push(task)
