@@ -60,7 +60,7 @@ form input:focus-visible {
 }
 
 .to-do-container li {
-    margin-bottom: 10px;
+    margin-bottom: 20px;
 }
 
 .to-do-container li .remove {
