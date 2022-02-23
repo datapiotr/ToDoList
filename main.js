@@ -9,7 +9,7 @@ const addTask = (e) => {
     e.preventDefault()
     const taskTitle = addInput.value
     const task = document.createElement('li')
-    task.innerHTML = taskTitle + ' <i class="fa-solid fa-trash remove"></i> '
+    task.innerHTML = taskTitle + '  <i class="fa-solid fa-trash remove"></i>'
     tasksList.push(task)
     ul.textContent = ''
     tasksList.forEach((li, index) => {
